@@ -1,0 +1,132 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  transition: 0.4s;
+}
+#search-container {
+  background: linear-gradient(130deg, rgb(255, 115, 0), blue);
+  height: 50px;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  animation: slide-up 1s ease-out;
+}
+#search-input {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.39);
+  transition: box-shadow 0.3s ease-in-out;
+}
+::placeholder{
+  color: white;
+}
+#search-input:focus {
+  outline: none;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.651);
+  background: rgba(255, 255, 255, 0.39);
+}
+#search-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4ca3af;
+  color: white;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+#search-btn:hover {
+  background-color: #4569a0;
+}
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 100px;
+  animation: fade-in 1s ease-out;
+}
+.content img {
+  width: 150px;
+  height: auto;
+  margin: 10px;
+  border-radius: 20px;
+  box-shadow: 1px 4px 8px 3px rgba(0, 0, 0, 0.795);
+  animation: zoom-in 0.5s ease-out;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.content img:hover {
+  transform: scale(1.3);
+  animation: zoom-in 0.5s ease-out;
+  transition: 0.5s;
+  box-shadow: 1px 8px 25px 3px black;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #search-input {
+    width: 80%;
+    border-radius: 5px;
+  }
+  #search-btn {
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+}
+
+/* Animations */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+#show-more {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4ca3af;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin: 20px;
+  align-items: center;
+  display: none;
+}
+
+#show-more:hover {
+  background-color: #4569a0;
+}
